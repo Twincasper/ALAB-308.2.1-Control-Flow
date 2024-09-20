@@ -31,3 +31,18 @@ const expandedRadius = Math.sqrt(expandedArea / PI);
 
 console.log(`The expanded garden would require an additional ${expandedArea - area} square meters of space.`);
 console.log(`The radius of the expanded garden would be ${expandedRadius} meters.`);
+
+/*
+
+The scientists decided not to listen to your recommendations, and have instead started with 100 plants in the original 5-meter-radius garden.
+Use try and catch to wrap your work in an error-handling block. If the amount of space required to hold the originally provided number of plants exceeds the amount of space available, throw a new error and log an appropriate message.
+
+*/
+
+try {
+  if (area > expandedArea) {
+    throw new Error(`The expanded garden would require more space than the original garden.`);
+  }
+} catch (error) {
+  console.error(error.message);
+}
