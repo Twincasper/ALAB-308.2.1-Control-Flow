@@ -19,12 +19,7 @@ const plantGrowth = (weeks) => {
   return condition;
 }
 
-/*
-The conservation area in which the garden is located has multiple other gardens. 
-Using the logic you have already created, determine:
-The amount of additional space that would be required if the scientists were to start with 100 plants, and did not prune them for 10 weeks.
-If the space remained circular, what would be the radius of this expanded garden?
-*/
+// Part 2
 
 const expandedArea = (startingCapacity * 2) * 100;
 const expandedRadius = Math.sqrt(expandedArea / PI);
@@ -32,12 +27,7 @@ const expandedRadius = Math.sqrt(expandedArea / PI);
 console.log(`The expanded garden would require an additional ${expandedArea - area} square meters of space.`);
 console.log(`The radius of the expanded garden would be ${expandedRadius} meters.`);
 
-/*
-
-The scientists decided not to listen to your recommendations, and have instead started with 100 plants in the original 5-meter-radius garden.
-Use try and catch to wrap your work in an error-handling block. If the amount of space required to hold the originally provided number of plants exceeds the amount of space available, throw a new error and log an appropriate message.
-
-*/
+// Part 3
 
 try {
   if (area > expandedArea) {
