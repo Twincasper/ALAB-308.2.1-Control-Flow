@@ -3,15 +3,15 @@ const iniRadius = 5;
 const PI = 3.1415;
 const area = PI * radius * radius;
 const minSpace = 0.8;
-const startingCapacity = 20 * minSpace;
+const startingPlants = 20 * minSpace;
 
 
 const plantGrowth = (weeks) => {
   let condition = '';
-  const plantCount = (startingCapacity * 2) * weeks;
-  if (plantCount > startingCapacity * 0.8) {
+  const plantCount = (startingPlants * 2) * weeks;
+  if (plantCount > area * 0.8) {
     condition = "The plant count has reached or gone beyond 80% of the area's capacity , so the plants need to be pruned.";
-  } else if (plantCount > startingCapacity * 0.5) {
+  } else if (plantCount > area * 0.5) {
     condition = 'The plants are growing at an acceptable rate and just need to be monitored';
   } else {
     condition = 'The plants are less than 50% of the area capacity, so more need to be planted to reach at least 50% capacity.';
