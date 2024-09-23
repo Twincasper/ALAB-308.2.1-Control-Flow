@@ -1,17 +1,18 @@
-const iniRadius = 5;
+const radius = 5;
 
 const PI = 3.1415;
 const area = PI * radius * radius;
 const minSpace = 0.8;
-const startingPlants = 20 * minSpace;
+const startingArea = 20 * minSpace;
 
 
 const plantGrowth = (weeks) => {
   let condition = '';
-  const plantCount = (startingPlants * 2) * weeks;
-  if (plantCount > area * 0.8) {
+  const plantArea = (startingArea * 2) * weeks;
+  console.log("THis is the plant area",plantArea)
+  if (plantArea > area * 0.8) {
     condition = "The plant count has reached or gone beyond 80% of the area's capacity , so the plants need to be pruned.";
-  } else if (plantCount > area * 0.5) {
+  } else if (plantArea > area * 0.5) {
     condition = 'The plants are growing at an acceptable rate and just need to be monitored';
   } else {
     condition = 'The plants are less than 50% of the area capacity, so more need to be planted to reach at least 50% capacity.';
@@ -19,9 +20,13 @@ const plantGrowth = (weeks) => {
   return condition;
 }
 
+console.log(plantGrowth(1));
+console.log( plantGrowth(2));
+console.log(plantGrowth(3));
+
 // Part 2
 
-const expandedArea = (startingCapacity * 2) * 100;
+const expandedArea = (startingArea * 2) * 100;
 const expandedRadius = Math.sqrt(expandedArea / PI);
 
 console.log(`The expanded garden would require an additional ${expandedArea - area} square meters of space.`);
